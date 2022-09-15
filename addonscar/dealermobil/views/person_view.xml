@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- dealermobil.person tree view -->
+    <record id="dealermobil_person_view_tree" model="ir.ui.view">
+        <field name="name">dealermobil.person.view.tree</field>
+        <field name="model">dealermobil.person</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="name"/>
+                <field name="alamat" />
+                <field name="tgl_lahir" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- dealermobil.person form view -->
+    <record id="dealermobil_person_view_form" model="ir.ui.view">
+        <field name="name">dealermobil.person.view.form</field>
+        <field name="model">dealermobil.person</field>
+        <field name="arch" type="xml">
+            <form string="Nama">
+                <sheet>
+                    <group name="nama" string="Nama">
+                        <!-- Add your fields here -->
+                        <field name="name" />
+                    </group>
+                    <group name="data" string="Data">
+                        <field name="alamat" />
+                        <field name="tgl_lahir" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>

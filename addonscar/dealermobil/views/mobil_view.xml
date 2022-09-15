@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    
+    <!-- dealermobil.mobil tree view -->
+    <record id="dealermobil_mobil_view_tree" model="ir.ui.view">
+        <field name="name">Daftar Mobil</field>
+        <field name="model">dealermobil.mobil</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="name" />
+                <field name="harga_beli" />
+                <field name="harga_jual" />
+                <field name="stok" />
+                <field name="jenismobil_id" />
+                 <field name="supplier_id" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- dealermobil.mobil form view -->
+    <record id="dealermobil_mobil_view_form" model="ir.ui.view">
+        <field name="name">Form Mobil</field>
+        <field name="model">dealermobil.mobil</field>
+        <field name="arch" type="xml">
+            <form string="Mobil">
+                <header>
+                    <button string="Input Mobil"
+                            name="%(datang_mobil_action_wizzard)d"
+                            type="action"
+                            class="btn btn-primary my-3"/>
+                    </header>
+                <sheet>
+                    <group name="Mobil" string="Mobil">
+                        <!-- Add your fields here -->
+                        <field name="name" />
+                        <field name="harga_beli" />
+                        <field name="harga_jual" />
+                        <field name="stok" />
+                    </group>
+
+                    <group name="Jenis Mobil" string="Jenis Mobil">
+                        <field name="jenismobil_id" />
+                    </group>
+
+                    <group name="supplier" string="Supplier">
+                        <field name="supplier_id" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- dealermobil.mobil action window -->
+    <record id="dealermobil_mobil_action" model="ir.actions.act_window">
+        <field name="name">Daftar Mobil</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">dealermobil.mobil</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem
+        id="dealermobil_mobil_menu_act"
+        name="Daftar Mobil"
+        parent="dealermobil_mobil_menu_categ"
+        action="dealermobil_mobil_action"
+        sequence="20"/>
+
+</odoo>

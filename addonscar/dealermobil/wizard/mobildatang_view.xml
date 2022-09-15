@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- dealermobil.datangmobil form view -->
+    <record id="datang_mobil_view_form_wizzard" model="ir.ui.view">
+        <field name="name">Mobil Datang</field>
+        <field name="model">dealermobil.datangmobil</field>
+        <field name="arch" type="xml">
+            <form string="Form Kedatangan Mobil">
+                <group>
+                    <field name="mobil_id" />
+                    <field name="jumlah" />
+                </group>
+
+                <footer>
+                    <button name='button_datang_mobil'
+                            type='object'
+                            string='Simpan'
+                            class='btn btn-primary' />
+                    <button string='Cancel'
+                            special='cancel'
+                            class='btn btn-secondary' />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <!-- dealermobil.mobil action window -->
+    <record id="datang_mobil_action_wizzard" model="ir.actions.act_window">
+        <field name="name">Kedatangan Mobil</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">dealermobil.datangmobil</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref='datang_mobil_view_form_wizzard' />
+        <field name="target">new</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem 
+        id="datang_mobil_menu_action_wizzard"
+        name="Input Mobil"
+        parent="dealermobil_menu_root"
+        action="datang_mobil_action_wizzard"
+        sequence="48"/>
+
+</odoo>

@@ -1,0 +1,10 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_dealermobil_jenismobil,access.dealermobil.jenismobil,model_dealermobil_jenismobil,,1,1,1,1
+access_dealermobil_mobil,access.dealermobil.mobil,model_dealermobil_mobil,,1,1,1,1
+access_dealermobil_person,access.dealermobil.person,model_dealermobil_person,,1,1,1,1
+access_dealermobil_kasir,access.dealermobil.kasir,model_dealermobil_kasir,,1,1,1,1
+access_dealermobil_cleaningservice,access.dealermobil.cleaningservice,model_dealermobil_cleaningservice,,1,1,1,1
+access_dealermobil_supplier,access.dealermobil.supplier,model_dealermobil_supplier,,1,1,1,1
+access_dealermobil_penjualan,access.dealermobil.penjualan,model_dealermobil_penjualan,,1,1,1,1
+access_dealermobil_detailpenjualan,access.dealermobil.detailpenjualan,model_dealermobil_detailpenjualan,,1,1,1,1
+access_dealermobil_datangmobil,access.dealermobil.datangmobil,model_dealermobil_datangmobil,,1,1,1,1

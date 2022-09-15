@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- res.partner inherit search view -->
+    <record id="res_partner_pelanggan_inherit_search" model="ir.ui.view">
+        <field name="name">res.partner.inherit.view.search</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_res_partner_filter"/>
+        <field name="arch" type="xml">
+            <field name="parent_id" position="after" >
+                <filter name="pelanggan" string="Pelanggan" domain="[('is_pelanggan', '=', True)]"  />
+            </field>
+        </field>
+    </record>
+
+    <!-- res.partner inherit tree view -->
+    <record id="res_partner_pelanggan_view_tree_inherit" model="ir.ui.view">
+        <field name="name">res.partner.inherit.view.tree</field>
+        <field name="model">res.partner</field>
+        <field name="mode">extension</field>
+        <field name="inherit_id" ref="base.view_partner_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='vat']" position="after">
+                <field name="poin" />
+                <field name="level" />
+            </xpath>   
+        </field>
+    </record>
+
+    <!-- res.partner inherit form view -->
+    <record id="res_partner_pelanggan_view_form_inherit" model="ir.ui.view">
+        <field name="name">res.partner.inherit.view.form</field>
+        <field name="model">res.partner</field>
+        <field name="mode">extension</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='vat']" position="after">
+                <field name="poin" />
+                <field name="level" />
+            </xpath>        
+        </field>
+    </record>
+
+    <!-- res.partner action window -->
+    <record id="res_partner_pelanggan_action" model="ir.actions.act_window">
+        <field name="name">Pelanggan</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">tree,form,kanban</field>
+        <field name="context">
+        {
+            'search_default_pelanggan': 1,
+            'default_is_pelanggan':True 
+        }
+    </field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem 
+        id="pelanggan_view_menu_act" 
+        name="Pelanggan" 
+        parent="dealermobil_menu_root" 
+        action="res_partner_pelanggan_action" 
+        sequence="30"/>
+
+</odoo>

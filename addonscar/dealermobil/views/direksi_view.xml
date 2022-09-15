@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- res.partner inherit form view -->
+    <record id="res_partner_direksi_view_form_inherit" model="ir.ui.view">
+        <field name="name">res.partner.inherit.view.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='vat']" position="after">
+                <field name="poin" />
+                <field name="is_direksi" />
+            </xpath>
+        </field>
+    </record>
+
+    <!-- res.partner inherit search view -->
+    <record id="res_partner_direksi_inherit_search" model="ir.ui.view">
+        <field name="name">Form Direksi</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_res_partner_filter"/>
+        <field name="arch" type="xml">
+            <field name="parent_id" position="after" >
+                <filter name="direksi" string="Direksi" domain="[('is_direksi', '=', True)]"  />
+            </field>
+        </field>
+    </record>
+
+    <!-- res.partner action window -->
+    <record id="res_partner_direksi_action" model="ir.actions.act_window">
+        <field name="name">Direksi</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">
+            {
+                'search_default_direksi': 1,
+                'default_is_direksi':True 
+            }
+        </field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem 
+        id="dealermobil_direksi_menu_act"
+        name="Direksi"
+        parent="dealermobil_menu_root"
+        action="res_partner_direksi_action" 
+        sequence="41"/>
+
+</odoo>

@@ -1,0 +1,24 @@
+<odoo>
+
+    <!-- Report Supplier -->
+    <record id="report_supplier_xlsx" model="ir.actions.report">
+        <field name="name">Supplier Excel</field>
+        <field name="model">dealermobil.supplier</field>
+        <field name="report_type">xlsx</field>
+        <field name="report_name">dealermobil.report_supplier_xlsx</field>
+        <field name="report_file">dealermobil.report_supplier_xlsx</field>
+        <field name="binding_model_id" ref="model_dealermobil_supplier"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <record id="report_penjualan_pdf" model="ir.actions.report">
+        <field name="name">Faktur PDF</field>
+        <field name="model">dealermobil.penjualan</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">dealermobil.report_penjualan_pdf</field>
+        <field name="report_file">dealermobil.report_penjualan_pdf</field>
+        <field name="binding_model_id" ref="model_dealermobil_penjualan"/>
+        <field name="binding_type">report</field>
+    </record>
+
+</odoo>

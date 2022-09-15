@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- dealermobil.jenismobil tree view -->
+    <record id="dealermobil_jenismobil_view_tree" model="ir.ui.view">
+        <field name="name">dealermobil.jenismobil.view.tree</field>
+        <field name="model">dealermobil.jenismobil</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="name"/>
+                <field name="model_mobil"/>
+                <field name="model_tipe"/>
+
+								<!-- Perubahannya di sini -->
+                <field name="jml_mobil" />
+                <field name="daftar" />
+								<!-- Akhir perubahannya di sini -->
+            </tree>
+        </field>
+    </record>
+
+    <!-- dealermobil.jenismobil form view -->
+    <record id="dealermobil_jenismobil" model="ir.ui.view">
+        <field name="name">dealermobil.jenismobil.view.form</field>
+        <field name="model">dealermobil.jenismobil</field>
+        <field name="arch" type="xml">
+            <form string="Jenis Mobil">
+                <sheet>
+                    <group name="Jenis" string="Posisi Jenis">
+                        <!-- Add your fields here -->
+                        <field name="name"/>
+                        <field name="model_mobil"/>
+												<!-- Perubahannya di sini -->
+                        <field name="jml_mobil" />
+												<!-- Akhir perubahannya di sini -->
+                    </group>
+
+                    <group name="Tipe" string="Posisi Tipe">
+                        <field name="model_tipe"/>
+                        <field name="mobil_ids" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- dealermobil.jenismobil action window -->
+    <record id="dealermobil_jenismobil_action" model="ir.actions.act_window">
+        <field name="name">Jenis Mobil</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">dealermobil.jenismobil</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem
+        id="dealermobil_jenismobil_menu_act"
+        name="Jenis Mobil"
+        parent="dealermobil_mobil_menu_categ"
+        action="dealermobil_jenismobil_action"
+        sequence="10"/>
+
+</odoo>

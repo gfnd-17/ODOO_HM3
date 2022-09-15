@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- dealermobil.kasir inherit tree view -->
+    <record id="dealermobil_kasir_view_tree_inherit" model="ir.ui.view">
+        <field name="name">Daftar Kasir</field>
+        <field name="model">dealermobil.kasir</field>
+        <field name="mode">primary</field>
+        <field name="inherit_id" ref="dealermobil_person_view_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="before">
+                <field name="id_kasir" />
+            </xpath>          
+        </field>
+    </record>
+
+    <!-- dealermobil.kasir inherit form view -->
+    <record id="dealermobil_kasir_view_form_inherit" model="ir.ui.view">
+        <field name="name">Form Kasir</field>
+        <field name="model">dealermobil.kasir</field>
+        <field name="mode">primary</field>
+        <field name="inherit_id" ref="dealermobil_person_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form//sheet//group[2]" position="after">
+                <group name="id" string="ID">
+                    <field name="id_kasir" />
+                </group>
+            </xpath>
+            <xpath expr="//field[@name='alamat']" position="attributes">
+               <attribute name="string">Address</attribute>
+            </xpath>          
+        </field> 
+    </record>
+
+    <!-- dealermobil.kasir action window -->
+    <record id="dealermobil_kasir_action" model="ir.actions.act_window">
+        <field name="name">Kasir</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">dealermobil.kasir</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem 
+        id="dealermobil_kasir_menu_act"
+        name="Kasir"
+        parent="dealermobil_pegawai_menu_categ"
+        action="dealermobil_kasir_action"
+        sequence="10"/>
+
+</odoo>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- dealermobil.supplier tree view -->
+    <record id="dealermobil_supplier_view_tree" model="ir.ui.view">
+        <field name="name">Daftar Supplier</field>
+        <field name="model">dealermobil.supplier</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="name" />
+                <field name="alamat" />
+                <field name="no_telp" />
+                <field name="mobil_id" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- dealermobil.supplier form view -->
+    <record id="dealermobil_supplier_view_form" model="ir.ui.view">
+        <field name="name">Form Supplier</field>
+        <field name="model">dealermobil.supplier</field>
+        <field name="arch" type="xml">
+            <form string="Supplier">
+                <sheet>
+                    <group>
+                        <!-- Add your fields here -->
+                        <field name="name" />
+                        <field name="alamat" />
+                        <field name="no_telp" />
+                    </group>
+                    <group name="mobil" string="Mobil">
+                        <field name="mobil_id" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- dealermobil.supplier action window -->
+    <record id="dealermobil_supplier_action" model="ir.actions.act_window">
+        <field name="name">Supplier</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">dealermobil.supplier</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="dealermobil_supplier_menu_act" 
+        name="Supplier" 
+        parent="dealermobil_menu_root" 
+        action="dealermobil_supplier_action" 
+        sequence="40"/>
+
+</odoo>

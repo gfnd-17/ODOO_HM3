@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="report_penjualan_pdf">
+        <t t-call="web.html_container">
+            <t t-call="web.internal_layout">
+<!--                <t t-call="web.external_layout">-->
+                <div class="page">
+                    <h1>FAKTUR PENJUALAN MOBIL</h1>
+                    <t t-foreach="docs" t-as="d">
+                        <div class="row">
+                            <div class="col-4">Kode Order    :</div>
+                            <div class="col-8"><span t-field="d.name"/></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4">Nama        :</div>
+                            <div class="col-8"><span t-field="d.nama_pembeli"/></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4">Tanggal Transaksi :</div>
+                            <div class="col-8"><span t-field="d.tgl_penjualan"/></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4">Jumlah Rp   :</div>
+                            <div class="col-8"><span t-field="d.total_bayar"/></div>
+                        </div>
+                        <t t-foreach="d.detailpenjualan_ids" t-as="ds">
+                            <div class="row">
+                                <div class="col-4">Mobil   :</div>
+                                <div class="col-8"><span t-field="ds.mobil_id.name"/></div>
+                            </div>
+                        </t>
+                    </t>
+                </div>
+            </t>
+        </t>
+    </template>
+
+
+</odoo>
