@@ -25,12 +25,14 @@
     # always loaded
     'data': [
         'security/ir.model.access.csv',
+        'views/menu.xml',
         'wizard/mobildatang_view.xml',
+        'wizard/penjualanreport_wizard_view.xml',
+        'report/wizard_penjualanreport_template.xml',
         'views/mobil_view.xml',
         'views/jenismobil_view.xml',
         'views/views.xml',
         'views/templates.xml',
-        'views/menu.xml',
         'views/jenismobil_view.xml',
         'views/person_view.xml',
         'views/kasir_view.xml',
@@ -40,6 +42,7 @@
         'views/penjualan_view.xml',
         'report/report.xml',
         'report/penjualanPDF.xml',
+
         
     ],
     # only loaded in demonstration mode

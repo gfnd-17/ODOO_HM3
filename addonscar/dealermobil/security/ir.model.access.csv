@@ -7,4 +7,5 @@ access_dealermobil_cleaningservice,access.dealermobil.cleaningservice,model_deal
 access_dealermobil_supplier,access.dealermobil.supplier,model_dealermobil_supplier,,1,1,1,1
 access_dealermobil_penjualan,access.dealermobil.penjualan,model_dealermobil_penjualan,,1,1,1,1
 access_dealermobil_detailpenjualan,access.dealermobil.detailpenjualan,model_dealermobil_detailpenjualan,,1,1,1,1
-access_dealermobil_datangmobil,access.dealermobil.datangmobil,model_dealermobil_datangmobil,,1,1,1,1
+access_dealermobil_datangmobil,access.dealermobil.datangmobil,model_dealermobil_datangmobil,,1,1,1,
+access_dealermobil_penjualanreport,access.dealermobil.penjualanreport,model_dealermobil_penjualanreport,,1,1,1,1

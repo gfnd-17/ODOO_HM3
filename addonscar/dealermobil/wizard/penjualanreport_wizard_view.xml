@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="penjualanreport_wizard_view_form" model="ir.ui.view">
+        <field name="name">penjualanreport_wizard_view_form</field>
+        <field name="model">dealermobil.penjualanreport</field>
+        <field name="arch" type="xml">
+            <form string="penjualanreport_wizzard_form">
+                <group>
+                    <field name="pelanggan_id"/>
+                </group>
+                <group>
+                    <field name="dari_tgl"/>
+                    <field name="ke_tgl"/>
+                </group>
+                <footer>
+                    <button name="action_penjualan_report" type="object" string="Print Report" class="btn btn-warning"/>
+                    <button special="cancel" string="Cancel" class="btn btn-danger"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+   <record id="penjualanreport_wizard_action" model="ir.actions.act_window">
+       <field name="name">penjualanreport_wizard_action</field>
+       <field name="type">ir.actions.act_window</field>
+       <field name="res_model">dealermobil.penjualanreport</field>
+       <field name="view_mode">form</field>
+       <field name="view_id" ref="penjualanreport_wizard_view_form"/>
+       <field name="target">new</field>
+   </record>
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="penjualanreport_wizard_menu_action"
+              name="Sale Report"
+              parent="dealermobil_menu_root"
+              action="penjualanreport_wizard_action"
+              sequence="49"/>
+</odoo>

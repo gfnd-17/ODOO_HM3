@@ -21,4 +21,13 @@
         <field name="binding_type">report</field>
     </record>
 
+    <record id="wizard_penjualanreport_pdf" model="ir.actions.report">
+        <field name="name">Print Report</field>
+        <field name="model">dealermobil.penjualanreport</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">dealermobil.wizard_penjualanreport_pdf_tmp</field>
+        <field name="report_file">dealermobil.wizard_penjualanreport_pdf_tmp</field>
+        <field name="binding_model_id" ref="model_dealermobil_penjualanreport"/>
+        <field name="binding_type">report</field>
+    </record>
 </odoo>
